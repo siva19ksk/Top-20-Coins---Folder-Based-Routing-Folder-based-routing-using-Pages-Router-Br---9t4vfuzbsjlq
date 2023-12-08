@@ -4,16 +4,16 @@ import { useState, useEffect } from "react";
 function CoinDetail() {
   const [coin, setCoin] = useState(null);
   const router=useRouter();
-  const {id}=router.query;
+  const {coin_id}=router.query;
 
   useEffect(()=>{
     const fetchData=async ()=>{
-      const res=await fetch(`https://api.coinlore.net/api/tickers/?id=${id}`);
+      const res=await fetch(`https://api.coinlore.net/api/tickers/?id=${coin_id}`);
       const json=await res.json();
       setCoin(json(0));
     }
     fetchData();
-  },[id])
+  },[coin_id])
 
   if(!coin){
     return (<h1>Loading...</h1>)
