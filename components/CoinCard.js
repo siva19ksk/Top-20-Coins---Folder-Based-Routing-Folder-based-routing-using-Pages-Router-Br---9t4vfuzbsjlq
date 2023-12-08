@@ -9,7 +9,7 @@ function CoinCard({ coin }) {
       <p className="coin-rank">Rank: {coin.rank}</p>
       <p className="coin-price">Price: ${coin.price_usd}</p>
       <Link className="view-details-link" href={`/coins/${coin.id}`}>
-        View Details
+        View Details 
       </Link>
     </div>
   );

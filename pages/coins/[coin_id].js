@@ -10,7 +10,7 @@ function CoinDetail() {
     const fetchData=async ()=>{
       const res=await fetch(`https://api.coinlore.net/api/tickers/?id=${coin_id}`);
       const json=await res.json();
-      setCoin(json(0));
+      setCoin(json[0]);
     }
     fetchData();
   },[coin_id])
